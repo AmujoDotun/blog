@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class PostController extends Controller
+{
+    public function show($post){
+        $posts = [
+            'first-post' => 'This is my first blog post',
+            'second-post' => 'the second post is more super better'
+        ];
+        
+        if(! array_key_exists($post, $posts)){
+            abort(404);
+        }
+        return view('post', [
+            'post' => $posts[$post]
+        ]);
+
+    }
+}
