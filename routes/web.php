@@ -17,13 +17,13 @@ Route::get('/posts/{post}', 'PostController@show');
 
 
 
-// Route::get('/', function () {
-//     // return view('welcome');
-//     // return "Hello DotSam";
-//     return ['foo' => 'bar'];
-// });
+Route::get('/', function () {
+    return view('welcome');
+    // return "Hello DotSam";
+    // return ['foo' => 'bar'];
+});
 
-Route::get('/', function(){
+Route::get('/test', function(){
     $name = request('name');
     // return $name;
     return view('test', [
@@ -33,6 +33,6 @@ Route::get('/', function(){
     // return view($name);
 });
 
-Route::get('/me', function(){
-    return 'hello';
+Route::get('contact', function(){
+    return view('contact');
 });
