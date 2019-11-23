@@ -5,26 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use DB;
+use App\Post;
 
 class PostController extends Controller
 {
     public function show($slug){
 
-        $post = DB::table('posts')->where('slug', $slug)->first();
+        // $post = DB::table('posts')->where('slug', $slug)->first();
+        $post = Post::where('slug', $slug)->firstorFail(); //using elequent model
 
-        dd($post);
-
-        // $posts = [
-        //     'first-post' => 'This is my first blog post',
-        //     'second-post' => 'the second post is more super better'
-        // ];
-        
-        // if(! array_key_exists($post, $posts)){
+        // if(! $post){
         //     abort(404);
         // }
-        // return view('post', [
-        //     'post' => $posts[$post]
-        // ]);
+
+        return view('post', [
+            'post' => $post
+        ]);
+
+    
 
     }
 }
