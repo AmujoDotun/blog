@@ -2,7 +2,7 @@
 This is hold on practice of laravel 6.0
 
 To installation
-clone and run composer install in your terminal 
+clone and run composer install in your terminal REA
 
 run php artisan serve
 

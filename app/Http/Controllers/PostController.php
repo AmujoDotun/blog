@@ -19,12 +19,12 @@ class PostController extends Controller
         //     'second-post' => 'the second post is more super better'
         // ];
         
-        if(! array_key_exists($post, $posts)){
-            abort(404);
-        }
-        return view('post', [
-            'post' => $posts[$post]
-        ]);
+        // if(! array_key_exists($post, $posts)){
+        //     abort(404);
+        // }
+        // return view('post', [
+        //     'post' => $posts[$post]
+        // ]);
 
     }
 }
