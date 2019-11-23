@@ -23,6 +23,12 @@ Route::get('/', function () {
     // return ['foo' => 'bar'];
 });
 
+
+
+Route::get('/about', function(){
+    return view('about');
+});
+
 Route::get('/test', function(){
     $name = request('name');
     // return $name;
