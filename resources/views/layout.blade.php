@@ -29,11 +29,13 @@ Released   : 20140225
 		</div>
 		<div id="menu">
 			<ul>
-				<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">Our Clients</a></li>
-				<li><a href="/about" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Careers</a></li>
-				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+			<!-- this line of code commit below mean if requested path is home page / echo(?) current_page_item else(:) echo empty -->
+			<!-- {{ Request::path() == '/' ? 'current_page_item' : '' }} -->
+				<li class="{{ Request::path() == '/' ? 'current_page_item' : '' }}"><a href="/" accesskey="1" title="">Homepage</a></li>
+				<li class="{{ Request::path() == 'client' ? 'current_page_item' : '' }}"><a href="#" accesskey="2" title="">Our Clients</a></li>
+				<li class="{{ Request::path() == 'about' ? 'current_page_item' : '' }}"><a href="/about" accesskey="3" title="">About Us</a></li>
+				<li class="{{ Request::path() == '/carrer' ? 'current_page_item' : '' }}"><a href="#" accesskey="4" title="">Careers</a></li>
+				<li class="{{ Request::path() == 'contact' ? 'current_page_item' : '' }}"><a href="#" accesskey="5" title="">Contact Us</a></li>
 			</ul>
 		</div>
 	</div>
