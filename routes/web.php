@@ -47,3 +47,5 @@ Route::get('/test', function(){
 Route::get('contact', function(){
     return view('contact');
 });
+
+Route::get('/articles/{article}', 'ArticleController@show');
