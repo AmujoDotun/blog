@@ -48,4 +48,5 @@ Route::get('contact', function(){
     return view('contact');
 });
 
+Route::get('/articles', 'ArticleController@index');
 Route::get('/articles/{article}', 'ArticleController@show');
