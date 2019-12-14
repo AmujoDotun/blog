@@ -52,3 +52,4 @@ Route::get('/articles', 'ArticleController@index');
 Route::post('/articles', 'ArticleController@store');
 Route::get('/articles/create', 'ArticleController@create');
 Route::get('/articles/{article}', 'ArticleController@show');
+Route::get('/articles/{article}/edit', 'ArticleController@edit');
