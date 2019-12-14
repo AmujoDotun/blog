@@ -33,12 +33,20 @@ class ArticleController extends Controller
     }
 
     public function create(){
+
+
         return view('articles.create');
     }
 
     public function store(){
         // die('hello');
         // dump(request()->all()); TO MAKE A REquest using json formate
+        
+        request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
 
         $article = new Article();
         $article->title = request('title');
